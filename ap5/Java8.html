@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 8 Features</title>
+</head>
+<body>
+    <h1>Java 8 Features</h1>
+    <h2>1. Lambda Expressions</h2>
+    <p><b>What it is:</b> Lambda expressions provide a clear and concise way to represent one method interface using an expression.</p>
+    <pre><code>(parameters) -&gt; expression</code></pre>
+    <pre><code>
+List&lt;String&gt; names = Arrays.asList("John", "Jane", "Max");
+names.forEach(name -&gt; System.out.println(name));
+    </code></pre>
+    
+    <h2>2. Functional Interfaces</h2>
+    <p><b>What it is:</b> An interface with a single abstract method is called a functional interface. Java 8 introduced several new functional interfaces in the <code>java.util.function</code> package, such as <code>Predicate</code>, <code>Function</code>, <code>Supplier</code>, and <code>Consumer</code>.</p>
+    <pre><code>
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod();
+}
+    </code></pre>
+    
+    <h2>3. Stream API</h2>
+    <p><b>What it is:</b> The Stream API allows for functional-style operations on streams of elements, such as map-reduce transformations on collections. Streams support operations like <code>filter</code>, <code>map</code>, <code>reduce</code>, <code>collect</code>, and more.</p>
+    <pre><code>
+List&lt;String&gt; names = Arrays.asList("John", "Jane", "Max");
+List&lt;String&gt; filteredNames = names.stream()
+                                      .filter(name -&gt; name.startsWith("J"))
+                                      .collect(Collectors.toList());
+    </code></pre>
+    
+    <h2>4. Default Methods</h2>
+    <p><b>What it is:</b> Default methods allow interfaces to have methods with a default implementation. This helps in maintaining backward compatibility with older versions of interfaces.</p>
+    <pre><code>
+interface MyInterface {
+    default void myDefaultMethod() {
+        System.out.println("Default Method");
+    }
+}
+    </code></pre>
+    
+    <h2>5. Optional Class</h2>
+    <p><b>What it is:</b> The <code>Optional</code> class is a container that may or may not contain a non-null value. This helps in avoiding <code>NullPointerException</code>.</p>
+    <pre><code>
+Optional&lt;String&gt; optional = Optional.ofNullable(null);
+optional.ifPresent(System.out::println);
+    </code></pre>
+    
+    <h2>6. Date and Time API</h2>
+    <p><b>What it is:</b> Java 8 introduced a new Date and Time API under the <code>java.time</code> package, which is more comprehensive and easier to work with than the old <code>Date</code> and <code>Calendar</code> classes.</p>
+    <pre><code>
+LocalDate date = LocalDate.now();
+LocalTime time = LocalTime.now();
+LocalDateTime dateTime = LocalDateTime.now();
+    </code></pre>
+    
+    <h2>7. Nashorn JavaScript Engine</h2>
+    <p><b>What it is:</b> Java 8 introduced the Nashorn JavaScript engine, which allows embedding JavaScript code within Java applications.</p>
+    <pre><code>
+ScriptEngineManager manager = new ScriptEngineManager();
+ScriptEngine engine = manager.getEngineByName("JavaScript");
+engine.eval("print('Hello, World')");
+    </code></pre>
+    
+    <h2>8. New <code>java.util</code> Concurrency Utilities</h2>
+    <p><b>What it is:</b> Java 8 introduced new classes in the <code>java.util.concurrent</code> package, such as <code>CompletableFuture</code>, which represents a future result of an asynchronous computation.</p>
+    <pre><code>
+CompletableFuture.supplyAsync(() -&gt; "Hello")
+                 .thenApply(result -&gt; result + " World")
+                 .thenAccept(System.out::println);
+    </code></pre>
+    
+    <h2>9. Metaspace</h2>
+    <p><b>What it is:</b> Java 8 replaced the PermGen space with Metaspace, which is more efficient and improves performance. Metaspace grows automatically by default and is not limited by the <code>-XX:MaxPermSize</code> JVM option.</p>
+</body>
+</html>

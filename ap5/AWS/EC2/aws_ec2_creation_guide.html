@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC2 Instance Creation Guide</title>
+</head>
+<body>
+    <h1>EC2 Instance Creation Guide</h1>
+    <ol>
+        <li><strong>Sign in to AWS Console</strong>
+            <ul>
+                <li>Go to <a href="https://aws.amazon.com/console/">AWS Management Console</a>.</li>
+                <li>Sign in with your credentials.</li>
+            </ul>
+        </li>
+        <li><strong>Navigate to EC2 Dashboard</strong>
+            <ul>
+                <li>In the AWS Management Console, type "EC2" in the search bar and select it.</li>
+            </ul>
+        </li>
+        <li><strong>Launch Instance</strong>
+            <ul>
+                <li>Click the <strong>"Launch Instance"</strong> button.</li>
+            </ul>
+        </li>
+        <li><strong>Choose an Amazon Machine Image (AMI)</strong>
+            <ul>
+                <li>Select an AMI that meets your requirements. Common choices include Amazon Linux 2, Ubuntu, or Windows Server.</li>
+            </ul>
+        </li>
+        <li><strong>Choose an Instance Type</strong>
+            <ul>
+                <li>Select the instance type that fits your use case. For example, <code>t2.micro</code> is commonly used for free tier eligibility.</li>
+            </ul>
+        </li>
+        <li><strong>Configure Instance</strong>
+            <ul>
+                <li><strong>Number of Instances:</strong> Usually 1, but you can specify more.</li>
+                <li><strong>Network:</strong> Choose a VPC (Virtual Private Cloud) or use the default one.</li>
+                <li><strong>Subnet:</strong> Select a subnet (the default one is usually fine).</li>
+                <li><strong>Auto-assign Public IP:</strong> Choose "Enable" if you need a public IP address.</li>
+                <li><strong>Advanced Details:</strong> You can add user data scripts here for initialization tasks.</li>
+            </ul>
+        </li>
+        <li><strong>Add Storage</strong>
+            <ul>
+                <li>Modify the storage as needed. The default is often an 8 GB EBS (Elastic Block Store) volume.</li>
+                <li>You can add more volumes if required.</li>
+            </ul>
+        </li>
+        <li><strong>Add Tags</strong>
+            <ul>
+                <li>Add tags to manage your instance. For example, add a tag with a key of "Name" and a value of your instance name.</li>
+            </ul>
+        </li>
+        <li><strong>Configure Security Group</strong>
+            <ul>
+                <li>Create a new security group or select an existing one.</li>
+                <li>Define rules for inbound and outbound traffic, such as allowing SSH (port 22) for Linux or RDP (port 3389) for Windows.</li>
+            </ul>
+        </li>
+        <li><strong>Review and Launch</strong>
+            <ul>
+                <li>Review all the configurations.</li>
+                <li>Click on <strong>"Launch"</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>Choose or Create a Key Pair</strong>
+            <ul>
+                <li>Select an existing key pair or create a new one. This key pair will allow you to SSH into your instance.</li>
+                <li>Download the private key (<code>.pem</code> file) and store it securely.</li>
+            </ul>
+        </li>
+        <li><strong>Launch the Instance</strong>
+            <ul>
+                <li>After selecting your key pair, click <strong>"Launch Instances"</strong>.</li>
+                <li>You will see a confirmation page with your instance ID.</li>
+            </ul>
+        </li>
+        <li><strong>Access Your Instance</strong>
+            <ul>
+                <li>Use the <code>.pem</code> file to SSH into your EC2 instance if it's Linux-based, or use RDP if it's Windows-based.</li>
+                <li>Example SSH command:
+                    <pre>ssh -i "your-key.pem" ec2-user@your-public-ip</pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Monitor and Manage</strong>
+            <ul>
+                <li>Go back to the EC2 Dashboard to monitor your instance, view metrics, and manage it.</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

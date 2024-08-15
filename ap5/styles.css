@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+.treeview ul {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+}
+
+.treeview li {
+    position: relative;
+}
+
+.treeview li > a {
+    cursor: pointer;
+}
+
+.treeview li > a::after {
+    content: '\25BA';
+    position: absolute;
+    right: 15px;
+    transition: transform 0.3s;
+}
+
+.treeview li.open > a::after {
+    transform: rotate(90deg);
+}
+
+.treeview ul li a {
+    padding-left: 20px;
+}
+
+.treeview ul li a:hover {
+    background-color: #1abc9c;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}

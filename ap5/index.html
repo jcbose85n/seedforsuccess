@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sidebar Menu with Frameset</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #sidebar {
+            width: 200px;
+            background: #f4f4f4;
+            padding: 10px;
+            box-sizing: border-box;
+            border-right: 1px solid #ddd;
+        }
+        #content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<frameset cols="200px, *">
+    <frame src="sidebar.html" name="sidebar">
+    <frame src="../index.html" name="content">
+</frameset>
+<noframes>
+    <body>
+        <p>Your browser does not support frames.</p>
+    </body>
+</noframes>
+</html>
