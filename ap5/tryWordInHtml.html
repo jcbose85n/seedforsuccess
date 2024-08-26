@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Word Document</title>
+    <title>Full-Screen Word Document</title>
+    <style>
+        /* Set the iframe to occupy the full screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove the border */
+        }
+    </style>
 </head>
 <body>
-    <h1>Embed Word Document in HTML</h1>
-    <!-- <iframe src="trydoc.docx"
-            style="width:600px; height:500px;" frameborder="0">
-    </iframe> -->
-    <iframe src="https://docs.google.com/gview?url=https://github.com/seedforsuccess/seedforsuccess/raw/initial/ap5/trydoc.docx&embedded=true"
-            style="width:600px; height:500px;" frameborder="0">
-    </iframe>
+    <iframe src="https://docs.google.com/gview?url=https://github.com/seedforsuccess/seedforsuccess/raw/initial/ap5/trydoc.docx&embedded=true"></iframe>
 </body>
 </html>
